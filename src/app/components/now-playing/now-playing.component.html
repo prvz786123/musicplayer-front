@@ -1,0 +1,67 @@
+<div class="col-sm-10 col-lg-10 mx-auto">
+  <div class="row my-2" *ngIf="showNowPlaying">
+    <div class="col-sm-3 col-lg-3">
+      <img class="shadow-lg mb-4 bg-white rounded" src="http://filmmusicreporter.com/wp-content/uploads/2018/05/mosaic.jpg" width="100%"  alt="">
+    </div>
+    <div class="col-sm-9 col-lg-9">
+      <div class="row my-2">
+        <div class="col-lg-12">
+            <span>
+                <img style="float:right" class="pointer" (click)="close()" src="../../../assets/UI Materials/Close.svg" width="5%" alt="">
+              </span>
+            {{album.title}} <br>
+            {{currentPlayingDetails.name}} - <strong>{{currentPlayingDetails.artist}} </strong>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-8 col-lg-8">
+            <span>
+                <img class="pointer" src="../../../assets/UI Materials/Restart.svg" width="12%" alt="">
+              </span>
+              <span class="mx-4">
+                <img class="pointer" src="../../../assets/UI Materials/15-Back.svg" width="12%" alt="">
+              </span>
+              <span>
+                <img class="pointer" (click)="playPause()" [src]="playing ? '../../../assets/UI Materials/Pause.svg' : '../../../assets/UI Materials/Play.svg'" width="17%" alt="">
+              </span>
+              <span class="mx-4"> 
+                <img class="pointer" src="../../../assets/UI Materials/15-Front.svg" width="12%" alt="">
+              </span>
+              <span>
+                <img class="pointer" src="../../../assets/UI Materials/Tempo.svg" width="12%" alt="">
+              </span>
+        </div>
+      </div>
+      <div class="row my-3">
+          <div class="col-sm-8 col-lg-8">
+            <div class="row">
+              <div class="col-sm-2">
+                {{35 | minuteSeconds}}
+              </div>
+              <div class="col-sm-8" style="padding:12px 0px 12px 0">
+                  <div class="progress" style="height: 3px;">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+              </div>
+              <div class="col-sm-2">
+                  {{currentPlayingDetails.duration | minuteSeconds }}
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-lg-4">
+            <div class="row">
+              <div class="col-sm-3 px-1">
+                  <img src="../../../assets/UI Materials/Sound.svg" style="float:right" width="50%" alt="">
+              </div>
+              <div class="col-sm-9 px-0 py-2">
+                <div class="progress" style="height: 3px;">
+                  <div class="progress-bar bg-danger" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>    
+            </div>
+        </div>
+    </div>
+    </div>
+  </div>

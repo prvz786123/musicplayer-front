@@ -1,0 +1,14 @@
+
+<ul class="list-group col-sm-10 col-lg-10 mx-auto">
+  <li *ngFor="let track of albums[0].track_list; let i=index" class="list-group-item" [ngClass]="{test: nowPlaying==i ? true:false}">
+    <div class="row">
+      <div class="col-sm-1 col-lg-1"><span class="myBox1"><img style="cursor:pointer" (click)="playPause(i)" [src]="nowPlaying==i ? '../../../assets/UI Materials/List-Pause.svg' : '../../../assets/UI Materials/List-Play.svg'" width="60%"></span></div>
+      <div class="col-sm-5 col-lg-8">{{track.name}}</div>
+      <div class="col-sm-3 col-lg-3">
+        <span>{{track.duration | minuteSeconds}}</span>
+        <span class="mx-4"><img src="../../../assets/UI Materials/Fav-Icon-Red.svg" width="15%" alt=""></span>
+        <span><img src="../../../assets/UI Materials/Download-Icon-Red.svg" width="12%" alt=""></span>
+      </div>
+    </div>
+  </li>
+</ul>
